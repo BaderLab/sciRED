@@ -56,7 +56,7 @@ The input data for Tutorial 1 is provided in the "Data" folder. Instructions for
 
 If you find sciRED useful for your publication, please cite:
 
-[Pouyabahar et al. Interpretable single-cell factor decomposition using sciRED.](https://www.biorxiv.org/content/10.1101/2024.08.01.605536v2)
+[Pouyabahar et al. Interpretable single-cell factor decomposition using sciRED.](https://www.nature.com/articles/s41467-025-57157-2)
 
 For the code and Zenodo archive:  
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14595050.svg)](https://doi.org/10.5281/zenodo.14595050)
