@@ -46,11 +46,25 @@ Detailed package version information is provided in the requirements.txt file.
 
 Installation, verified on Linux and Unix systems, takes less than a minute once all dependencies are resolved.
 
+
 ## Tutorial
 
 Follow [tutorial-1](https://github.com/delipouya/sciRED/blob/main/tutorial1_scMixology.ipynb) and [tutorial-2](https://github.com/delipouya/sciRED/blob/main/tutorial2_stimulatedPBMC.ipynb) to learn how to use sciRED. These tutorials introduce the standard processing pipeline and demonstrate the application of sciRED on the scMixology and stimulated PBMC datasets. Further details about the input datasets are available in the manuscript. The data processing scripts are available in the _data_prep_ folder. 
 
 The input data for Tutorial 1 is provided in the "Data" folder. Instructions for downloading and saving data for Tutorial 2 can be found in the `data_stimPBMC.R` script inside the _data_prep_ folder. The demo for Tutorial 1 took less than a minute to run on a workstation with 24 CPUs and 64 GB RAM.
+
+**Exporting the RNA Assay from Seurat v5 to an h5ad File**
+
+When exporting Seurat v5 objects to h5ad format for sciRED, ensure the RNA assay is correctly structured by following these steps before conversion:
+
+```r
+data_raw[["RNA3"]] <- as(object = data_raw[["RNA"]], Class = "Assay")
+DefaultAssay(data_raw) <- "RNA3"
+data_raw[["RNA"]] <- NULL
+data_raw <- RenameAssays(object = data_raw, RNA3 = 'RNA')
+```
+This ensures proper compatibility before running sciRED.
+
 
 ## Citation
 
